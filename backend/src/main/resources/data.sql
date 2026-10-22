@@ -6,3 +6,6 @@ INSERT INTO users (username, password, total_score) VALUES ('joannadoe', 'superd
 INSERT INTO matchgames (number_of_questions, seconds, user_id) VALUES (5, 10, 1);
 INSERT INTO matchgames (number_of_questions, seconds, user_id) VALUES (10, 21.3, 1);
 INSERT INTO matchgames (number_of_questions, seconds, user_id) VALUES (25, 49.8, 2);
+
+INSERT INTO questions (question, correct_answer, user_answer, correct) VALUES ('Print the current directory', 'pwd', 'pwd', true);
+INSERT INTO questions (question, correct_answer, user_answer, correct) VALUES ('What is the symbol that indicates current directory?', '.', '..', false);

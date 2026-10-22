@@ -29,8 +29,7 @@ public class Question {
 	private boolean correct;
 
 	public Question(){}
-	public Question(Long id, String question, String correct_answer, String user_answer, boolean correct){ // , int positive_score, int negative_score
-		this.id = id;
+	public Question(String question, String correct_answer, String user_answer, boolean correct){ // , int positive_score, int negative_score
 		this.question = question;
 		this.correct_answer = correct_answer;
 		this.user_answer = user_answer;
@@ -39,7 +38,6 @@ public class Question {
 	// 	this.negative_score = negative_score;
 	}
 
-	public void setId(Long id){this.id = id;}
 	public void setQuestion(String q){question = q;}
 	public void setCorrectAnswer(String correct){correct_answer = correct;}
 	public void setUserAnswer(String user){user_answer = user;}
@@ -47,10 +45,9 @@ public class Question {
 	// public void setNegativeScore(int score){negative_score = score;}
 	public void setIsCorrect(boolean correct){this.correct = correct;}
 
-	public Long getId(){return id;}
 	public String getQuestion(){return question;}
 	public String getCorrectAnswer(){return correct_answer;}
-	public String getUSerAnswer(){return user_answer;}
+	public String getUserAnswer(){return user_answer;}
 	public boolean getCorrect(){return correct;}
 	// public int getPositiveScore(){return positive_score;}
 	// public int getNegativeScore(){return negative_score;}
