@@ -19,9 +19,7 @@ public class Question {
 
 	@Column (unique = true,nullable = true)
 	private String question;
-	@Column (unique = true,nullable = false)
 	private String correct_answer;
-	@Column (unique = true,nullable = true)
 	private String user_answer;
 	// @Column (unique = true,nullable = false)
 	// private int positive_score;
