@@ -1,4 +1,7 @@
-INSERT INTO users (username, password) VALUES ('johndoe', 'pw1234_aPdS');
-INSERT INTO users (username, password) VALUES ('janedoe', 'coolpw1234_aPdS');
-INSERT INTO users (username, password) VALUES ('jasperdoe', 'supercoolpw1234_aPdS');
-INSERT INTO users (username, password) VALUES ('joannadoe', 'superdupercoolpw1234_aPdS');
+INSERT INTO users (username, password, total_score) VALUES ('johndoe', 'pw1234_aPdS', 100);
+INSERT INTO users (username, password, total_score) VALUES ('janedoe', 'coolpw1234_aPdS', 10);
+INSERT INTO users (username, password, total_score) VALUES ('jasperdoe', 'supercoolpw1234_aPdS', 42);
+INSERT INTO users (username, password, total_score) VALUES ('joannadoe', 'superdupercoolpw1234_aPdS', 175);
+INSERT INTO matchgames (number_of_questions, seconds) VALUES (5, 10);
+INSERT INTO matchgames (number_of_questions, seconds) VALUES (10, 21.3);
+INSERT INTO matchgames (number_of_questions, seconds) VALUES (25, 49.8);
