@@ -1,0 +1,67 @@
+[
+  {
+    "question": "Print the current working directory.",
+    "correctAnswer": "pwd",
+    "difficulty": 1
+  },
+  {
+    "question": "List all files in the directory, including hidden ones.",
+    "correctAnswer": "ls -a",
+    "difficulty": 1
+  },
+  {
+    "question": "Create a new directory named 'test' in the current path",
+    "correctAnswer": "mkdir test",
+    "difficulty": 1
+  },
+  {
+    "question": "Create a new directory named test12 in the parent directory",
+    "correctAnswer": "mkdir ../test12",
+    "difficulty": 1
+  },
+  {
+    "question": "Display the content of a text file in the current path named 'notes.txt'",
+    "correctAnswer": "cat notes.txt",
+    "difficulty": 1
+  },
+  {
+    "question": "Display the content of a text file in the parent path named 'notes.txt'",
+    "correctAnswer": "cat ../notes.txt",
+    "difficulty": 1
+  },
+  {
+    "question": "Your current directory is ~/dir1/dir2. Change directory with a single command into dir1 without typing ~",
+    "correctAnswer": "cd ..",
+    "difficulty": 1
+  },
+  {
+    "question": "Change permissions of a file 'script.sh' to make it executable by everyone",
+    "correctAnswer": "chmod +x script.sh",
+    "difficulty": 2
+  },
+  {
+    "question": "Search for the string 'ERROR' inside the file 'app.log'",
+    "correctAnswer": "grep ERROR app.log",
+    "difficulty": 2
+  },
+  {
+    "question": "Show disk space usage for file systems in a human-readable format",
+    "correctAnswer": "df -h",
+    "difficulty": 2
+  },
+  {
+    "question": "Find all files with '.log' extension in the current directory and subdirectories",
+    "correctAnswer": "find . -name \"*.log\"",
+    "difficulty": 3
+  },
+  {
+    "question": "Display real-time running processes sorted by CPU usage",
+    "correctAnswer": "top",
+    "difficulty": 3
+  },
+  {
+    "question": "Redirect both standard output and standard error of a command to 'file.log'",
+    "correctAnswer": "cmd > file.log 2>&1",
+    "difficulty": 3
+  }
+]
