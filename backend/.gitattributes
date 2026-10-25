@@ -5,4 +5,4 @@
 *.sql linguist-language=sql
 
 *.json linguist-detectable=true
-*.json linguist-language=sql
+*.json linguist-language=json
