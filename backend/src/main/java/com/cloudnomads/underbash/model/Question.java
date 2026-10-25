@@ -10,19 +10,19 @@ public class Question {
   private Long question_id;
 
   private String question;
-  private String answer;
+  private String correctAnswer;
 
   // Might want to give a different score depending on
   // the question difficulty.
-  private Integer scoreQuestion;
+  private Integer difficulty;
 
   public Question(){
   }
 
-  public Question(String question, String answer, Integer scoreQuestion){
+  public Question(String question, String correctAnswer, Integer difficulty){
     this.question = question;
-    this.answer = answer;
-    this.scoreQuestion = scoreQuestion;
+    this.correctAnswer = correctAnswer;
+    this.difficulty = difficulty;
   }
 
   // Getters and setter
@@ -42,19 +42,19 @@ public class Question {
     this.question = question;
   }
 
-  public String getAnswer(){
-    return answer;
+  public String getCorrectAnswer(){
+    return correctAnswer;
   }
 
-  public void setAnswer(String answer){
-    this.answer = answer;
+  public void setCorrectAnswer(String correctAnswer){
+    this.correctAnswer = correctAnswer;
   }
 
-  public Integer getScoreQuestion(){
-    return scoreQuestion;
+  public Integer getDifficulty(){
+    return difficulty;
   }
 
-  public void setScoreQuestion(Integer scoreQuestion){
-    this.scoreQuestion = scoreQuestion;
+  public void setDifficulty(Integer difficulty){
+    this.difficulty = difficulty;
   }
 }
