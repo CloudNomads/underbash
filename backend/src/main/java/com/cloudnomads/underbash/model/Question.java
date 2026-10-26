@@ -7,7 +7,7 @@ import jakarta.persistence.*;
 public class Question {
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
-  private Long question_id;
+  private Long questionId;
 
   private String question;
   private String correctAnswer;
@@ -27,11 +27,11 @@ public class Question {
 
   // Getters and setter
   public Long getQuestion_id(){
-    return question_id;
+    return questionId;
   }
 
-  public void setQuestion_id(Long question_id){
-    this.question_id = question_id;
+  public void setQuestion_id(Long questionId){
+    this.questionId = questionId;
   }
 
   public String getQuestion(){
