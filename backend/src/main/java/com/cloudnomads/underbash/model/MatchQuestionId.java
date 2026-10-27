@@ -26,7 +26,7 @@ public class MatchQuestionId implements Serializable {
   }
 
   // Getters and setters.
-
+  
   public Long getMatchId(){
     return matchId;
   }
