@@ -17,20 +17,23 @@ public class MatchQuestion {
 
 	private String user_answer;
 
-	private boolean correct;
-
 	public MatchQuestion(){}
-	public MatchQuestion(String user_answer, boolean correct){ // , int positive_score, int negative_score
+	public MatchQuestion(String user_answer){ // , int positive_score, int negative_score
 		this.user_answer = user_answer;
-		this.correct = correct;
 	}
 
 	// Getters and setters
 
+	public MatchQuestionId getMatchQuestionId(){
+		return matchQuestionId;
+	}
+
+	public void setMatchQuestionId(MatchQuestionId matchQuestionId){
+		this.matchQuestionId = matchQuestionId;
+	}
+
 	public void setUserAnswer(String user){user_answer = user;}
-	public void setIsCorrect(boolean correct){this.correct = correct;}
 
 	public String getUserAnswer(){return user_answer;}
-	public boolean getCorrect(){return correct;}
 	// todo: compare the written user answer with the correct answer
 }
