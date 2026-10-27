@@ -15,11 +15,11 @@ public class MatchQuestion {
 	@EmbeddedId 
 	private MatchQuestionId matchQuestionId;
 
-	private String user_answer;
+	private String userAnswer;
 
 	public MatchQuestion(){}
-	public MatchQuestion(String user_answer){ // , int positive_score, int negative_score
-		this.user_answer = user_answer;
+	public MatchQuestion(String userAnswer){ // , int positive_score, int negative_score
+		this.userAnswer = userAnswer;
 	}
 
 	// Getters and setters
@@ -32,8 +32,8 @@ public class MatchQuestion {
 		this.matchQuestionId = matchQuestionId;
 	}
 
-	public void setUserAnswer(String user){user_answer = user;}
+	public void setUserAnswer(String user){userAnswer = user;}
 
-	public String getUserAnswer(){return user_answer;}
+	public String getUserAnswer(){return userAnswer;}
 	// todo: compare the written user answer with the correct answer
 }
