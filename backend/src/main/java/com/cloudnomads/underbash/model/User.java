@@ -61,7 +61,7 @@ public class User {
         return total_score;
     }
 
-    public void setScore(Integer total_score){
+    public void setTotalScore(Integer total_score){
         this.total_score = total_score;
     }
 }
