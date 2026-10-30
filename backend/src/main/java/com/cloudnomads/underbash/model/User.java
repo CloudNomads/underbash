@@ -13,13 +13,16 @@ public class User {
     // usernames are unique
     @Column(unique = true, nullable = false)
     private String username;
-     
+
+	@Column(nullable = false)
     private String password;
-    private Integer totalScore;
+    private Integer totalScore;				// todo: create a Score Class
 
     public User() {
-    }
-
+		username = "";
+		password = "";
+		totalScore = 0;
+	}
     public User(String username, String password, Integer totalScore) {
         this.username = username;
         this.password = password;
