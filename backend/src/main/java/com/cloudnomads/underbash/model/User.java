@@ -16,17 +16,19 @@ public class User {
 
 	@Column(nullable = false)
     private String password;
-    private Integer totalScore;				// todo: create a Score Class
+
+	@Column(name = "totalscore")
+    private Integer total_score;				// todo: create a Score Class
 
     public User() {
 		username = "";
 		password = "";
-		totalScore = 0;
+		total_score = 0;
 	}
-    public User(String username, String password, Integer totalScore) {
+    public User(String username, String password, Integer total_score) {
         this.username = username;
         this.password = password;
-        this.totalScore = totalScore;
+        this.total_score = total_score;
     }
 
     // Getters and setters
@@ -56,10 +58,10 @@ public class User {
     }
 
     public int getScore(){
-        return totalScore;
+        return total_score;
     }
 
-    public void setScore(Integer totalScore){
-        this.totalScore = totalScore;
+    public void setScore(Integer total_score){
+        this.total_score = total_score;
     }
 }
