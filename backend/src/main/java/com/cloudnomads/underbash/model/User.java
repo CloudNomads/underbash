@@ -15,10 +15,12 @@ public class User {
     private String username;
 
 	@Column(nullable = false)
-    private String password;
+    private String password;					// todo: insert a password management system
 
-	@Column(name = "totalscore")
+	@Column(name = "totalscore",nullable = false)
     private Integer total_score;				// todo: create a Score Class
+
+	private boolean active;
 
     public User() {
 		username = "";
@@ -64,4 +66,12 @@ public class User {
     public void setTotalScore(Integer total_score){
         this.total_score = total_score;
     }
+
+	public boolean isActive(){
+		return active;
+	}
+
+	public void setActive(boolean active){
+		this.active = active;
+	}
 }
