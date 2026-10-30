@@ -32,8 +32,11 @@ public class MatchQuestion {
 		this.matchQuestionId = matchQuestionId;
 	}
 
-	public void setUserAnswer(String user){userAnswer = user;}
+	public void setUserAnswer(String userAnswer){
+		this.userAnswer = userAnswer;
+	}
 
-	public String getUserAnswer(){return userAnswer;}
-	// todo: compare the written user answer with the correct answer
+	public String getUserAnswer(){
+		return userAnswer;
+	}
 }
