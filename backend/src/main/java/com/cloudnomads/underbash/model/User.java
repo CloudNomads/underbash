@@ -20,17 +20,15 @@ public class User {
 	@Column(name = "totalscore",nullable = false)
     private Integer total_score;				// todo: create a Score Class
 
-	private boolean active;
+	@Column(name = "online",nullable = false)
+	private Boolean active;
 
-    public User() {
-		username = "";
-		password = "";
-		total_score = 0;
-	}
-    public User(String username, String password, Integer total_score) {
+    public User() {}
+    public User(String username, String password, Integer total_score, Boolean active) {
         this.username = username;
         this.password = password;
         this.total_score = total_score;
+		this.active = active;
     }
 
     // Getters and setters
@@ -59,7 +57,7 @@ public class User {
         this.password = password;
     }
 
-    public int getScore(){
+    public int getTotalScore(){
         return total_score;
     }
 
@@ -67,7 +65,7 @@ public class User {
         this.total_score = total_score;
     }
 
-	public boolean isActive(){
+	public Boolean isActive(){
 		return active;
 	}
 
