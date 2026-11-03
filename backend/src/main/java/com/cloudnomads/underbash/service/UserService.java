@@ -34,12 +34,14 @@ public class UserService{
 	}
 
 	@Transactional 
-	public void remove(String username){      // todo: insert a password management system
+	public boolean remove(String username){      // todo: insert a password management system
 		if(repo.existsByUsername(username)){
 			User u = repo.findByUsername(username).orElseThrow(() -> new RuntimeException("User not found!"));
 
 			repo.delete(u);
 		}
+
+		return true;
 	}
 
 	// ----------------------------------------------------------------------------------------------------
@@ -149,9 +151,10 @@ public class UserService{
 
 	@Transactional
 	public boolean deleteUser(String username){
-		return repo.findByUsername(username).map(u ->{
-			repo.delete(u);
-			return true;
-		}).orElse(false);
+		// return repo.findByUsername(username).map(u ->{
+		// 	repo.delete(u);
+		// 	return true;
+		// }).orElse(false);
+		return remove(username);
 	}
 }
