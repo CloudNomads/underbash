@@ -1,6 +1,7 @@
 package com.cloudnomads.underbash.model;
 
 import jakarta.persistence.*;
+import java.util.Date;
 
 @Entity
 @Table(name = "users") // Table name
@@ -23,12 +24,15 @@ public class User {
 	@Column(name = "online",nullable = false)
 	private Boolean active;
 
+    private Date accountCreated;
+
     public User() {}
-    public User(String username, String password, Integer total_score, Boolean active) {
+    public User(String username, String password, Integer total_score, Boolean active, Date accountCreated) {
         this.username = username;
         this.password = password;
         this.total_score = total_score;
 		this.active = active;
+        this.accountCreated = accountCreated;
     }
 
     // Getters and setters
@@ -72,4 +76,12 @@ public class User {
 	public void setActive(boolean active){
 		this.active = active;
 	}
+
+    public Date getAccountCreated(){
+        return accountCreated;
+    }
+
+    public void setAccountCreated(Date accountCreated){
+        this.accountCreated = accountCreated;
+    }
 }
