@@ -1,5 +1,6 @@
 package com.cloudnomads.underbash.controller;
 
+import java.time.LocalDate;
 import java.util.List;
 
 import org.springframework.web.bind.annotation.*;
@@ -92,5 +93,15 @@ public class UserController {
 	@GetMapping("/get-all-online")
 	public List<User> getAllByActive(@RequestParam boolean status){
 		return service.getAllUsersByActive(status);
+	}
+
+	@GetMapping("/get-by-date-created")
+	public User getUserByAccountCreated(String username,LocalDate created){
+		return service.getUserByCreationDate(username,created);
+	}
+
+	@GetMapping("/get-all-by-date-created")
+	public List<User> getAllByAccountCreated(@RequestParam LocalDate created){
+		return service.getAllUsersByCreationDate(created);
 	}
 }

@@ -1,5 +1,6 @@
 package com.cloudnomads.underbash.repository;
 
+import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
 
@@ -14,8 +15,10 @@ import com.cloudnomads.underbash.model.User;
 public interface UserRepository extends JpaRepository<User, Long> {
 	public Optional<User> findByUsername(String username);
 	public boolean existsByUsername(String username);
-	public List<User> findAllByActive(Boolean active);
 
 	@Query ("SELECT u FROM User u WHERE u.total_score = :tot_score")
 	public List<User> findAllByTotalScore(Integer tot_score);
+	@Query ("SELECT u FROM User u WHERE u.created_at = :created_at")
+	public List<User> findAllByCreated_at(LocalDate created_at);
+	public List<User> findAllByActive(Boolean active);
 }

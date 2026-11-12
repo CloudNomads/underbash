@@ -1,6 +1,7 @@
 package com.cloudnomads.underbash.service;
 
 
+import java.time.LocalDate;
 import java.util.List;
 
 import org.springframework.stereotype.Service;
@@ -81,11 +82,23 @@ public class UserService{
 		return repo.findAllByActive(active);
 	}
 
+	@Transactional(readOnly = true)
+	public User getUserByCreationDate(String username,LocalDate created){
+		return repo.findByUsername(username)
+		.filter(u -> u.getUsername().equals(username) && u.getCreatedAt().equals(created))
+		.orElseThrow(() -> new RuntimeException("User not found!"));
+	}
+
+	@Transactional(readOnly = true)
+	public List<User> getAllUsersByCreationDate(LocalDate created){
+		return repo.findAllByCreated_at(created);
+	}
+
 	// ----------------------------------------------------------------------------------------------------
 
 	@Transactional 
 	public User registerUser(String username,String password){
-		return add(username, password);
+		return add(username,password);
 	}
 
 	@Transactional 

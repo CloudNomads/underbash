@@ -1,7 +1,8 @@
 package com.cloudnomads.underbash.model;
 
 import jakarta.persistence.*;
-import java.util.Date;
+
+import java.time.LocalDate;
 
 @Entity
 @Table(name = "users") // Table name
@@ -24,15 +25,16 @@ public class User {
 	@Column(name = "online",nullable = false)
 	private Boolean active;
 
-    private Date accountCreated;
+	@Column(nullable = false,updatable = false)
+    private LocalDate created_at;
 
     public User() {}
-    public User(String username, String password, Integer total_score, Boolean active, Date accountCreated) {
+    public User(String username, String password, Integer total_score, Boolean active) {
         this.username = username;
         this.password = password;
         this.total_score = total_score;
 		this.active = active;
-        this.accountCreated = accountCreated;
+		this.created_at = LocalDate.now();
     }
 
     // Getters and setters
@@ -77,11 +79,7 @@ public class User {
 		this.active = active;
 	}
 
-    public Date getAccountCreated(){
-        return accountCreated;
-    }
-
-    public void setAccountCreated(Date accountCreated){
-        this.accountCreated = accountCreated;
+    public LocalDate getCreatedAt(){
+        return created_at;
     }
 }
