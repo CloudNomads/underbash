@@ -1,3 +1,6 @@
+// vim:fileencoding=itf-8:foldmethod=marker
+
+
 package com.cloudnomads.underbash.controller;
 
 import java.time.LocalDate;
@@ -17,7 +20,8 @@ public class UserController {
 		this.service = service;
 	}
 
-	// REGISTER
+	//{{{ Manipulation Operators
+
 	@PostMapping("/register")
 	public User register(
 		@RequestParam String init_username,
@@ -26,7 +30,6 @@ public class UserController {
 		return service.registerUser(init_username,init_password);
 	}
 
-	// LOGIN
 	@PostMapping("/login")
 	public boolean login(
 		@RequestParam String username,
@@ -35,13 +38,11 @@ public class UserController {
 		return service.loginUser(username, password);
 	}
 
-	// LOGOUT
 	@PostMapping("/logout")
 	public boolean logout(@RequestParam String username){
 		return service.logoutUser(username);
 	}
 
-	// UPDATE
 	@PostMapping("/update")
 	public User update(
 		@RequestParam String curr_username,
@@ -52,13 +53,14 @@ public class UserController {
 		return service.updateUser(curr_username,new_username,new_password,new_tot_score);
 	}
 
-	// DELETE
 	@PostMapping("/delete")
 	public boolean delete(@RequestParam String username){
 		return service.deleteUser(username);
 	}
 
-	// GET USER/ALL
+	//}}}
+	//{{{ Readonly Operators
+
 	@GetMapping("/get")
 	public User get(@RequestParam String username){
 		return service.getUser(username);
@@ -104,4 +106,6 @@ public class UserController {
 	public List<User> getAllByAccountCreated(@RequestParam LocalDate created){
 		return service.getAllUsersByCreationDate(created);
 	}
+
+	//}}}
 }

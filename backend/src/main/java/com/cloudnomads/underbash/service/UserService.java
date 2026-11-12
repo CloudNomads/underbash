@@ -1,3 +1,6 @@
+// vim:fileencoding=utf-8:foldmethod=marker
+
+
 package com.cloudnomads.underbash.service;
 
 
@@ -24,6 +27,8 @@ public class UserService{
 		return repo;
 	}
 
+	//{{{ Add e Remove Operators
+
 	@Transactional
 	public User add(String username,String password){
 		if (repo.existsByUsername(username)) {
@@ -45,7 +50,8 @@ public class UserService{
 		return true;
 	}
 
-	// ----------------------------------------------------------------------------------------------------
+	//}}}
+	//{{{ ReadOnly Operators
 
 	@Transactional(readOnly = true)
 	public User getUser(String username){
@@ -94,7 +100,8 @@ public class UserService{
 		return repo.findAllByCreated_at(created);
 	}
 
-	// ----------------------------------------------------------------------------------------------------
+	//}}}
+	//{{{ Called Operators by UserController Operators
 
 	@Transactional 
 	public User registerUser(String username,String password){
@@ -170,4 +177,6 @@ public class UserService{
 		// }).orElse(false);
 		return remove(username);
 	}
+
+	//}}}
 }
